@@ -1,0 +1,57 @@
+﻿@page
+@model IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distributeur de boisson chaude</title>
+</head>
+<body>
+    <h2>Prix des boissons</h2>
+
+    <form method="post">
+        <label for="selectedRecette">Choisissez une boisson :</label>
+        <select id="selectedRecette" asp-for="SelectedRecetteId">
+            <option value="">-- Choix boisson --</option>
+            @foreach (var recette in Model.Recettes)
+            {
+                <option value="@recette.Id">@recette.Name</option>
+            }
+        </select>
+
+        <input type="submit" name="showPrice" value="Afficher le prix" />
+    </form>
+
+    @if (Model.SelectedRecette != null)
+    {
+        <hr />
+        
+        <div>
+            <h5>@Model.SelectedRecette.Name</h5>
+            <label>Prix de vente : </label>
+            <span>
+                @Model.SelectedRecette.SellingPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("fr-FR"))
+                
+            </span>
+            <br />
+
+            <label>Prix d'achat : </label>
+            <span>
+                @Model.SelectedRecette.PurshasePrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("fr-FR"))
+                
+            </span>
+            <br />
+
+            <label>Marge de profit : </label>
+            <span>
+                @Model.SelectedRecette.Profit.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("fr-FR"))
+                
+            </span>
+            <br />
+                    
+        </div>
+        <br />
+            
+    }
+</body>
+</html>
