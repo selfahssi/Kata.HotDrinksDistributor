@@ -4,8 +4,8 @@
 Pour ce mini projet, j'ai organisé mon projet en si'inspirant de l'architecure en Onion comme suit :
 * Une bibliothèque de classes DataAccess qui gère l'accès aux données via Sqlite en utilisant EntityFramework Core. Ce projet dépend du projet Domain
 
-* Une bibliothèque de classes Domain qui exposent les service Recette et Ingredient. Elle exposent notamment les Models ainsi que les interfaces et les ports
-  * A Noter : En temps normal, j'aurai séparé les modèles de données (sur lequelles se base le DataAccess) des modèles Business, et les mapper ensuite en utilisant des extensions ou des outils comme automapper;
+* Une bibliothèque de classes Domain qui expose les service Recette et Ingredient. Elle exposent notamment les Models ainsi que les interfaces et les ports
+  * A Noter : En temps normal, j'aurais séparé les modèles de données (sur lequelles se base le DataAccess) des modèles Business, et les mapper ensuite en utilisant des extensions ou des outils comme automapper;
     mais pour aller vite, j'utilise des données uniques pour l'accès au données, la logique est l'affichage. 
 
 * Une application Razor pages pour l'affichage! J'ai gardé les élements graphiques du template Microsoft et j'ai réecrit la page Index en injectant le services nécessaires
@@ -13,7 +13,7 @@ Pour ce mini projet, j'ai organisé mon projet en si'inspirant de l'architecure 
 
  
 ## Stack
-* ASP.Net Core 6 / Razor
+* C# / ASP.Net Core 6 / Razor
 * EntityFramework Core / Sqlite
 
 
